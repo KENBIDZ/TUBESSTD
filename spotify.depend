@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1765677395 source:d:\spotify\main.cpp
+	"spotify.h"
+
+1765677337 d:\spotify\spotify.h
+	<iostream>
+	<string>
+
+1765677355 source:d:\spotify\spotify.cpp
+	"spotify.h"
+
