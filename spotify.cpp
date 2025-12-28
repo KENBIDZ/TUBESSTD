@@ -1,5 +1,19 @@
 #include "spotify.h"
+void playSong(adrsong s) {
+    if (s != nullptr) {
+        cout << ">>> NOTIFIKASI: Memutar lagu: " << s->title << " - " << s->artist << " [" << s->duration << "s]" << endl;
+    } else {
+        cout << ">>> NOTIFIKASI: Tidak ada lagu untuk diputar." << endl;
+    }
+}
 
+void stopSong(adrsong s) {
+    if (s != nullptr) {
+        cout << ">>> NOTIFIKASI: Lagu " << s->title << " telah dihentikan." << endl;
+    } else {
+        cout << ">>> NOTIFIKASI: Tidak ada lagu yang sedang berjalan." << endl;
+    }
+}
 void createPlaylistList(PlaylistList &L) {
     L.firstplaylist = nullptr;
 }
@@ -221,4 +235,5 @@ void searchSong(PlaylistList L, string keyword) {
         p = p->nextplaylist;
     }
 }
+
 
