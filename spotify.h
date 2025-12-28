@@ -35,6 +35,8 @@ struct PlaylistList {
     adrplaylist firstplaylist;
 };
 
+void playSong(adrsong s);
+void stopSong(adrsong s);
 void createPlaylistList(PlaylistList &L);
 
 adrplaylist allocatePlaylist(string name);
@@ -60,4 +62,5 @@ adrsong prevSong(PlaylistList L, adrplaylist currentP, adrsong currentS);
 adrsong findSimilarSong(PlaylistList L, adrsong currentS);
 
 #endif // SPOTIFY_H_INCLUDED
+
 
