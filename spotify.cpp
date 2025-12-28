@@ -18,6 +18,7 @@ adrsong allocateSong(string title, string artist, int duration) {
     s->artist = artist;
     s->duration = duration;
     s->nextsong = nullptr;
+    s->prevsong = nullptr; // Inisialisasi nullptr
     return s;
 }
 
@@ -45,14 +46,73 @@ void insertSong(PlaylistList &L, string playlistName, adrsong s) {
     adrplaylist p = findPlaylist(L, playlistName);
     if (!p) return;
 
-    if (p->firstsong == nullptr)
+    if (p->firstsong == nullptr) {
         p->firstsong = s;
-    else {
+    } else {
         adrsong q = p->firstsong;
         while (q->nextsong != nullptr)
             q = q->nextsong;
         q->nextsong = s;
+        s->prevsong = q; // Hubungkan ke belakang
     }
+}
+adrsong nextSong(PlaylistList L, adrplaylist currentP, adrsong currentS) {
+    if (currentS == nullptr) return nullptr;
+
+    // i. Jika sedang berada di playlist
+    if (currentP != nullptr) {
+        if (currentS->nextsong != nullptr) {
+            return currentS->nextsong;
+        } else {
+            cout << "[End of Playlist]" << endl;
+            return currentS; // Tetap di lagu terakhir
+        }
+    } 
+    return findSimilarSong(L, currentS);
+}
+adrsong prevSong(PlaylistList L, adrplaylist currentP, adrsong currentS) {
+    if (currentS == nullptr) return nullptr;
+
+    if (currentP != nullptr) {
+        if (currentS->prevsong != nullptr) {
+            return currentS->prevsong;
+        } else {
+            cout << "[Start of Playlist]" << endl;
+            return currentS;
+        }
+    }
+
+    return findSimilarSong(L, currentS);
+}
+
+// FUNGSI MENCARI LAGU MIRIP (Berdasarkan Artis)
+adrsong findSimilarSong(PlaylistList L, adrsong currentS) {
+    adrplaylist p = L.firstplaylist;
+    adrsong fallback = nullptr;
+
+    while (p != nullptr) {
+        adrsong s = p->firstsong;
+        while (s != nullptr) {
+            // Cari artis yang sama tapi bukan lagu yang sedang diputar
+            if (s->artist == currentS->artist && s->title != currentS->title) {
+                return s;
+            }
+            // Simpan lagu apa saja sebagai fallback (lagu acak/berikutnya)
+            if (s != currentS && fallback == nullptr) {
+                fallback = s;
+            }
+            s = s->nextsong;
+        }
+        p = p->nextplaylist;
+    }
+
+    if (fallback != nullptr) {
+        cout << "[Saran lagu lain]" << endl;
+        return fallback;
+    }
+
+    cout << "[Tidak ada lagu mirip]" << endl;
+    return currentS;
 }
 
 void deletePlaylist(PlaylistList &L, string playlistName) {
@@ -161,3 +221,4 @@ void searchSong(PlaylistList L, string keyword) {
         p = p->nextplaylist;
     }
 }
+
