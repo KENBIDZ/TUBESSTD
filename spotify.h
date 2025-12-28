@@ -22,6 +22,7 @@ struct Song {
     string artist;
     int duration;
     adrsong nextsong;
+    adrsong prevsong; // Tambahan untuk fitur prev
 };
 
 struct Playlist {
@@ -54,4 +55,9 @@ void viewPlaylists(PlaylistList L);
 void viewSongsInPlaylist(PlaylistList L, string playlistName);
 void searchSong(PlaylistList L, string keyword);
 
+adrsong nextSong(PlaylistList L, adrplaylist currentP, adrsong currentS);
+adrsong prevSong(PlaylistList L, adrplaylist currentP, adrsong currentS);
+adrsong findSimilarSong(PlaylistList L, adrsong currentS);
+
 #endif // SPOTIFY_H_INCLUDED
+
