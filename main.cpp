@@ -56,14 +56,70 @@ int main() {
     getline(cin, user.username);
 
     // ===== DATA AWAL =====
-    insertPlaylist(L, allocatePlaylist("SZA - SOS Collection"));
-    insertSong(L, "SZA - SOS Collection", allocateSong("Kill Bill", "SZA", 153));
-    insertSong(L, "SZA - SOS Collection", allocateSong("Snooze", "SZA", 192));
-    insertSong(L, "SZA - SOS Collection", allocateSong("Nobody Gets Me", "SZA", 180));
+    // ============================================================
+    // PLAYLIST 1: Midnight Drive (Vibe: Smooth R&B)
+    // ============================================================
+    insertPlaylist(L, allocatePlaylist("Midnight Drive"));
+    insertSong(L, "Midnight Drive", allocateSong("Made For Me", "Muni Long", 188));
+    insertSong(L, "Midnight Drive", allocateSong("Saturn", "SZA", 186));
+    insertSong(L, "Midnight Drive", allocateSong("After Hours", "Kehlani", 202));
+    insertSong(L, "Midnight Drive", allocateSong("Pink + White", "Frank Ocean", 184));
+    insertSong(L, "Midnight Drive", allocateSong("Coffee", "Miguel", 286));
+    insertSong(L, "Midnight Drive", allocateSong("Location", "Khalid", 219));
+    insertSong(L, "Midnight Drive", allocateSong("Best Part", "Daniel Caesar", 209));
+    insertSong(L, "Midnight Drive", allocateSong("On My Mama", "Victoria Monét", 184));
 
-    insertPlaylist(L, allocatePlaylist("SZA - CTRL"));
-    insertSong(L, "SZA - CTRL", allocateSong("Love Galore", "SZA", 210));
-    insertSong(L, "SZA - CTRL", allocateSong("The Weekend", "SZA", 202));
+    // ============================================================
+    // PLAYLIST 2: Top Charts 2025 (Vibe: Pop Bangers)
+    // ============================================================
+    insertPlaylist(L, allocatePlaylist("Top Charts 2025"));
+    insertSong(L, "Top Charts 2025", allocateSong("Birds of a Feather", "Billie Eilish", 210));
+    insertSong(L, "Top Charts 2025", allocateSong("Espresso", "Sabrina Carpenter", 175));
+    insertSong(L, "Top Charts 2025", allocateSong("As It Was", "Harry Styles", 167));
+    insertSong(L, "Top Charts 2025", allocateSong("Greedy", "Tate McRae", 131));
+    insertSong(L, "Top Charts 2025", allocateSong("Flowers", "Miley Cyrus", 200));
+    insertSong(L, "Top Charts 2025", allocateSong("Too Sweet", "Hozier", 251));
+    insertSong(L, "Top Charts 2025", allocateSong("Single Soon", "Selena Gomez", 171));
+    insertSong(L, "Top Charts 2025", allocateSong("Runaway", "AURORA", 248));
+
+    // ============================================================
+    // PLAYLIST 3: Rap Caviar (Vibe: Hip-Hop & Trap)
+    // ============================================================
+    insertPlaylist(L, allocatePlaylist("Rap Caviar"));
+    insertSong(L, "Rap Caviar", allocateSong("Squabble Up", "Kendrick Lamar", 157));
+    insertSong(L, "Rap Caviar", allocateSong("Million Dollar Baby", "Tommy Richman", 155));
+    insertSong(L, "Rap Caviar", allocateSong("Fe!n", "Travis Scott", 191));
+    insertSong(L, "Rap Caviar", allocateSong("First Class", "Jack Harlow", 173));
+    insertSong(L, "Rap Caviar", allocateSong("Like That", "Future & Metro Boomin", 267));
+    insertSong(L, "Rap Caviar", allocateSong("Sticky", "Drake", 243));
+    insertSong(L, "Rap Caviar", allocateSong("Pushin P", "Gunna", 136));
+    insertSong(L, "Rap Caviar", allocateSong("Dark Thoughts", "Lil Tecca", 164));
+
+    // ============================================================
+    // PLAYLIST 4: Indie Soul & Local (Vibe: Chill & Aesthetic)
+    // ============================================================
+    insertPlaylist(L, allocatePlaylist("Indie Soul & Local"));
+    insertSong(L, "Indie Soul & Local", allocateSong("Midnight Sun", "Thee Marloes", 215));
+    insertSong(L, "Indie Soul & Local", allocateSong("Telepatía", "Kali Uchis", 160));
+    insertSong(L, "Indie Soul & Local", allocateSong("My Love Mine All Mine", "Mitski", 138));
+    insertSong(L, "Indie Soul & Local", allocateSong("Self Control", "Frank Ocean", 249));
+    insertSong(L, "Indie Soul & Local", allocateSong("Messy", "Lola Young", 192));
+    insertSong(L, "Indie Soul & Local", allocateSong("Here With Me", "d4vd", 242));
+    insertSong(L, "Indie Soul & Local", allocateSong("Belong Together", "Mark Ambor", 148));
+    insertSong(L, "Indie Soul & Local", allocateSong("Supalonely", "BENEE", 223));
+
+    // ============================================================
+    // PLAYLIST 5: SZA Essentials (Vibe: Full SZA)
+    // ============================================================
+    insertPlaylist(L, allocatePlaylist("SZA Essentials"));
+    insertSong(L, "SZA Essentials", allocateSong("Kill Bill", "SZA", 153));
+    insertSong(L, "SZA Essentials", allocateSong("Snooze", "SZA", 192));
+    insertSong(L, "SZA Essentials", allocateSong("Nobody Gets Me", "SZA", 180));
+    insertSong(L, "SZA Essentials", allocateSong("Love Galore", "SZA", 210));
+    insertSong(L, "SZA Essentials", allocateSong("The Weekend", "SZA", 202));
+    insertSong(L, "SZA Essentials", allocateSong("Shirt", "SZA", 181));
+    insertSong(L, "SZA Essentials", allocateSong("Broken Clocks", "SZA", 231));
+    insertSong(L, "SZA Essentials", allocateSong("Drew Barrymore", "SZA", 231));
 
     string input;
     do {
@@ -150,3 +206,4 @@ int main() {
     cout << "Program selesai.\n";
     return 0;
 }
+
